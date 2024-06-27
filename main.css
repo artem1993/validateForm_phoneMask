@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  max-width: 320px;
+  width: 100%;
+  padding: 0 15px;
+}
+form div:not(:last-child) {
+  margin-bottom: 16px;
+}
+form div input {
+  width: 100%;
+  padding: 0 8px;
+  height: 50px;
+  transition: all 0.3s ease 0s;
+  border: 1px solid #cccccc;
+}
+form div input:focus {
+  outline: none;
+}
+form div label.errorText {
+  color: red;
+  display: block;
+  margin-bottom: 10px;
+}
+form div.error input {
+  border-color: red;
+}
+form button {
+  width: 100%;
+  padding: 0 8px;
+  height: 50px;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+form button:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+dialog {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 50px 16px;
+  border: 1px solid #cccccc;
+}
