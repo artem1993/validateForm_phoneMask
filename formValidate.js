@@ -1,4 +1,5 @@
 const textInputs = document.querySelectorAll("input[type=text]")
+
 const getTextsValue = e => {
     if (!isNaN(e.key)) e.preventDefault()
 }
@@ -41,6 +42,19 @@ const formValidate = e => {
             if (input.value == "") {
                 createError(input, "Поле не заполнено")
                 result = false
+            }
+            if (input.type === "tel") {
+                removeError(input)
+                const phoneInput = input
+                const maxLength = phoneInput.getAttribute("maxlength")
+                if (phoneInput.value.length == 0) {
+                    createError(phoneInput, "Поле не заполнено")
+                    result = false
+                }
+                if (phoneInput.value.length > 0 && phoneInput.value.length < maxLength) {
+                    createError(phoneInput, `Введите 11 цифр`)
+                    result = false
+                }
             }
         }
     }
