@@ -1,9 +1,17 @@
+const textInputs = document.querySelectorAll("input[type=text]")
+const getTextsValue = e => {
+    if (!isNaN(e.key)) e.preventDefault()
+}
+
+for (const textInput of textInputs) {
+    textInput.addEventListener("keydown", getTextsValue)
+}
+
 const formValidate = e => {
     e.preventDefault()
     const dialog = document.querySelector("dialog")
     let result = true
     const inputs = e.target.querySelectorAll("input")
-
     const errorTextClass = "errorText"
     const errorClass = "error"
 
